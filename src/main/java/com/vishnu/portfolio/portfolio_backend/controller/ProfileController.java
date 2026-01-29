@@ -24,4 +24,9 @@ public class ProfileController {
     public Profile saveProfile(@RequestBody Profile profile) {
         return service.saveProfile(profile);
     }
+    @DeleteMapping("/{id}")
+    public String deleteProfile(@PathVariable Long id) {
+        service.deleteProfile(id);
+        return "Profile deleted successfully";
+    }
 }

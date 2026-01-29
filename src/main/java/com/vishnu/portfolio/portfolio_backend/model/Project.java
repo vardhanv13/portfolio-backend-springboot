@@ -19,4 +19,6 @@ public class Project {
     private String description;
 
     private String techStack;
+    private String imageUrl;
+
 }

@@ -2,6 +2,7 @@ package com.vishnu.portfolio.portfolio_backend.service;
 
 import org.springframework.stereotype.Service;
 
+
 import com.vishnu.portfolio.portfolio_backend.model.Profile;
 import com.vishnu.portfolio.portfolio_backend.repository.ProfileRepository;
 
@@ -22,5 +23,8 @@ public class ProfileService {
 
     public Profile saveProfile(Profile profile) {
         return repository.save(profile);
+    }
+    public void deleteProfile(Long id) {
+        repository.deleteById(id);
     }
 }

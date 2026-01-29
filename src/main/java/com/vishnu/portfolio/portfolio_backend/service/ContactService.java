@@ -4,6 +4,8 @@ import com.vishnu.portfolio.portfolio_backend.model.Contact;
 import com.vishnu.portfolio.portfolio_backend.repository.ContactRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ContactService {
 
@@ -16,7 +18,9 @@ public class ContactService {
     public Contact saveMessage(Contact contact) {
         return repository.save(contact);
     }
-    public Contact getContact() {
-        return repository.findAll().stream().findFirst().orElse(null);
+
+    // ✅ ADD THIS
+    public List<Contact> getAllMessages() {
+        return repository.findAll();
     }
 }

@@ -4,6 +4,8 @@ import com.vishnu.portfolio.portfolio_backend.model.Contact;
 import com.vishnu.portfolio.portfolio_backend.service.ContactService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/contact")
 @CrossOrigin(origins = "*")
@@ -15,12 +17,15 @@ public class ContactController {
         this.service = service;
     }
 
+    // ✅ POST (already working)
     @PostMapping
     public Contact sendMessage(@RequestBody Contact contact) {
         return service.saveMessage(contact);
     }
+
+    // ✅ ADD THIS
     @GetMapping
-    public Contact getContact() {
-        return service.getContact();
+    public List<Contact> getAllMessages() {
+        return service.getAllMessages();
     }
 }
